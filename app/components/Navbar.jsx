@@ -43,7 +43,7 @@ const Navbar = () => {
           <div className='max-sm:block md:hidden text-3xl'>
               <MdOutlineKeyboardDoubleArrowDown onClick={()=>setMenu(true)} />
         
-                  <div className={`absolute bg-white z-50 left-0 h-full w-full text-black flex flex-col justify-center items-center gap-20 ease-out duration-700 ${menu === true ? 'top-0' : '-top-[100%]'} [&>*:nth-child(n)]:font-bold `}>
+                  <div className={`absolute bg-white z-50 h-[100vh] left-0  w-full text-black flex flex-col justify-center items-center gap-20 ease-out duration-700 ${menu === true ? 'top-0' : '-top-[100%]'} [&>*:nth-child(n)]:font-bold `}>
                     <MdOutlineKeyboardDoubleArrowUp className='' onClick={()=>setMenu(false)} />
                     <a href="#about">About</a>
                     <a href="#resume">Resume</a>

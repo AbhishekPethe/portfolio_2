@@ -48,44 +48,48 @@ const Projects = () => {
           <BsAsterisk className='text-pink-400 ' />
         </motion.div>
       </h1>
-
-      <div className='flex justify-center items-center'>
-        <div className='w-[100vw] h-[50vh] md:w-[90vw] md:h-[50vh] lg:h-[90vh] overflow-scroll'>
-          {
-            data.map((each , i) => {
-              return (
-                <div key={i} className='w-full h-full sticky top-1 flex flex-col lg:flex-row lg:justify-between items-center bg-[#121111] '>
-                  <div className='w-[100vw] h-[240px] md:h-[400px] lg:h-[80%]'>
-
-                  <Image
-                    src={each.image}
-                    alt={each.title}
-                    className='w-full h-full'
-                    
-                    />
-                    </div>
-                  <div className='flex flex-col justify-center'>
-                    <h1>{each.title}</h1>
-                    <p>{each.github}</p>
-                  </div>
-                </div>
-              )
-            })  
-
-            
-            // [1, 2, 3, 4, 5, 6].map((each , i) => {
-            //   const clas = `z-${each}0`
-            //   return (
-            //     <div className={`w-full h-full flex justify-center items-center text-5xl sticky top-1 card ${clas} bg-black border-white border-2`} key={i} >{ each}</div>
-            //   )
-            // })
-          }
-        </div>      
       </div>
 
-      </div>
+
+
+
+      
   )
 }
 
 export default Projects
 
+
+{/* <div className='flex justify-center items-center'>
+<div className='w-[100vw] h-[50vh] md:w-[90vw] md:h-[50vh] lg:h-[90vh] overflow-scroll'>
+  {
+    data.map((each , i) => {
+      return (
+        <div key={i} className='w-full h-full sticky top-1 flex flex-col lg:flex-row lg:justify-between items-center bg-[#121111]   '>
+          <div className='w-[100vw] h-[240px] md:h-[400px] lg:w-[80vw] lg:h-[80%] '>
+
+          <Image
+            src={each.image}
+            alt={each.title}
+            className='w-full h-full'
+            
+            />
+            </div>
+          <div className='flex flex-col justify-center'>
+            <h1>{each.title}</h1>
+            <p>{each.github}</p>
+          </div>
+        </div>
+      )
+    })   */}
+
+    
+     {/* [1, 2, 3, 4, 5, 6].map((each , i) => {
+      const clas = `z-${each}0`
+      return (
+        <div className={`w-full h-full flex justify-center items-center text-5xl sticky top-1 card ${clas} bg-black border-white border-2`} key={i} >{ each}</div>
+      )
+    })
+  }
+</div>      
+</div> */}

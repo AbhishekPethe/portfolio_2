@@ -1,6 +1,6 @@
 "use client"
 import Image from 'next/image'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import profile from "../../public/profile.webp"
 import { GiFireAce } from "react-icons/gi";
 import { GiPlagueDoctorProfile } from "react-icons/gi";
@@ -8,15 +8,53 @@ import { FaHandPeace } from "react-icons/fa6";
 import { motion } from 'framer-motion';
 
 const Hero = () => {
+
+    const [mousePos, setMousePos] = useState({
+        x: 0,
+        y:0
+    })
+
+    const [cursorVariant , setCursorVariant] = useState("default")
+
+    useEffect(() => {
+        const mouseMove = e => {
+            // console.log(e.clientX , e.clientY);
+            setMousePos({
+                x: e.clientX,
+                y:e.clientY
+            })
+        }
+
+        window.addEventListener("mousemove", mouseMove)
+        
+        return () => {
+            window.removeEventListener("mousemove", mouseMove)
+        }
+    }, [])
+    
+    const variants = {
+        default: {
+            x: mousePos.x -14,
+            y: mousePos.y - 14,
+           
+        },
+        custom: {
+            height: 100,
+            width : 100,
+            x: mousePos.x -50,
+            y: mousePos.y - 50,
+            // backgroundColor: "black",
+            mixBlendMode : "difference"
+        }
+        
+    }
+
+    
+
+
   return (
       <div className='mt-10 md:mt-32 lg:mt-10 flex flex-col gap-10 md:gap-14 lg:gap-10 items-center justify-center text-center'>
-          {/* <Image
-            src={profile}
-            alt='profile'
-              placeholder="empty"
-              quality={100}
-              className='w-28 h-28 bg-white rounded-full'
-          /> */}
+
           <GiFireAce className='text-9xl' />
           <motion.div className='flex flex-col gap-5 items-center'>
               <motion.p
@@ -38,26 +76,45 @@ const Hero = () => {
                   }}
                   className='text-2xl md:text-4xl lg:text-3xl flex gap-4 font-semibold justify-center'>Hi, I&apos;m Abhishek <FaHandPeace /></motion.p>
             
-              
-              <div className='text-4xl tracking-wide leading-[50px] md:leading-[85px] md:text-7xl font-bold '>
-                  <p className='relative inline-block'>
-                    Building digital
-                      <span className='absolute -bottom-4 left-0 w-full overflow-hidden -z-10'>
+              {/* cursor */}
+              <motion.div
+                  variants={variants}
+                  animate={cursorVariant}
+                  
+                  className='cursor h-[28px] w-[28px] bg-white fixed top-0 left-0 rounded-full border-2 border-red-500 pointer-events-none z-50'>
+                  
+              </motion.div>
 
-                          <svg width="400" height="35" xmlns="http://www.w3.org/2000/svg" >
-                              <path
-                                  id="pathItem"
-                                  d="M5 20 Q 80 5 190 25"
-                                  stroke="gray"
-                                  fill="transparent"
-                                  stroke-width="7"
-                                  stroke-linecap="round"
+              <div className='text-4xl tracking-wide leading-[50px] md:leading-[85px] md:text-7xl font-bold '
+                  onMouseEnter={() => setCursorVariant("custom")}
+                  onMouseLeave={() => setCursorVariant("default")}
+              >
+                  <p className=' inline-block'>
+                      Building digital
 
-                              />
-                          </svg>
+                      <br /> </p>
+
+                  <p>experiences  where <br />
+                      <span className='relative text-red-500'>
+                          <span className='absolute -bottom-4 left-0 w-full overflow-hidden '>
+
+                              <svg width="400" height="35" xmlns="http://www.w3.org/2000/svg" >
+                                  <path
+                                      id="pathItem"
+                                      d="M5 20 Q 80 5 190 25"
+                                      stroke="gray"
+                                      fill="transparent"
+                                      stroke-width="7"
+                                      stroke-linecap="round"
+
+                                  />
+                              </svg>
+                          </span>
+                          Pixels&nbsp;
                       </span>
-                  <br /> </p>
-                  <p>experiences  where <br /> Pixels meet Purpose</p>
+                      meet Purpose</p>
+
+
               </div>
 
               <div className='text-gray-400 text-lg md:text-2xl lg:text-[22px] mt-10 lg:leading-10'>

@@ -1,42 +1,42 @@
 "use client"
+import { motion } from 'framer-motion';
 import React, { useState } from 'react'
-import { MdOutlineKeyboardDoubleArrowDown , MdOutlineKeyboardDoubleArrowUp } from "react-icons/md";
+import { MdOutlineKeyboardDoubleArrowDown, MdOutlineKeyboardDoubleArrowUp } from "react-icons/md";
 
-const Navbar = () => {
+const Navbar = ({mousePos , cursorVariant , setCursorVariant}) => {
 
-    const [menu, setMenu] = useState(false)
+  const [menu, setMenu] = useState(false)
+
     
   return (
         <div className='flex justify-between items-center'>
-          <p className=' text-2xl md:text-3xl mx-5'>
+      <motion.p className=' text-2xl md:text-3xl mx-5'
+        onMouseEnter={() => setCursorVariant("heading")}
+        onMouseLeave={()=> setCursorVariant("default")}
+      >
             O_O
-          </p>
+          </motion.p>
 
           {/* menu for desktop and tablet */}
           
-          <div className='flex justify-between gap-14 mr-10 
+          <div className='flex justify-between gap-8 mr-10 
           [&>*:nth-child(n)]:text-lg
-          hover:[&>*:nth-child(n)]:text-black
-          hover:[&>*:nth-child(n)]:before:block
-          hover:[&>*:nth-child(n)]:before:absolute
-          hover:[&>*:nth-child(n)]:before:bg-white
-          hover:[&>*:nth-child(n)]:before:-inset-1
-          hover:[&>*:nth-child(n)]:before:-skew-y-6
-          hover:[&>*:nth-child(n)]:relative
-          hover:[&>*:nth-child(n)]:before:-z-10
-     
-          hover:[&>*:nth-child(n)]:font-bold
-          [&>*:nth-child(n)]:ease-out
-          [&>*:nth-child(n)]:duration-300
+          [&>*:nth-child(n)]:px-3
+          hover:[&>*:nth-child(n)]:font-semibold
+          ease-out duration-1000
           max-sm:hidden
-          '
-          
-          >
-              <a href="#about">About</a>
-              <a href="#resume">Resume</a>
-              <a href="#projects">Projects</a>
-              <a href="#contact">Contact</a>
-
+          '>
+             
+          {
+            ["About", "Resume", "Projects", "Contact"].map((each , i) => {
+              return (
+                <motion.a href={`#${each}`} key={i}
+                  onMouseEnter={()=>setCursorVariant("navbar")}
+                  onMouseLeave={()=>setCursorVariant("default")}
+                >{each}</motion.a>
+              )
+            })
+                    }
           </div>
 
           {/* menu for mobile  */}
@@ -46,9 +46,9 @@ const Navbar = () => {
                   <div className={`fixed bg-white z-50 h-[100vh] left-0  w-full text-black flex flex-col justify-center items-center gap-20 ease-out duration-700 ${menu === true ? 'top-0' : '-top-[130%]'} [&>*:nth-child(n)]:font-bold `}>
                     <MdOutlineKeyboardDoubleArrowUp className='' onClick={()=>setMenu(false)} />
                     <a href="#about">About</a>
-                    <a href="#resume">Resume</a>
-                    <a href="#projects">Projects</a>
-                    <a href="#contact">Contact</a>
+              <a href="#resume">Resume</a>
+              <a href="#projects">Projects</a>
+              <a href="#contact">Contact</a>
                 </div>
           
           </div>
@@ -59,3 +59,17 @@ const Navbar = () => {
 }
 
 export default Navbar
+
+
+// hover:[&>*:nth-child(n)]:text-black
+// hover:[&>*:nth-child(n)]:before:block
+// hover:[&>*:nth-child(n)]:before:absolute
+// hover:[&>*:nth-child(n)]:before:bg-white
+// hover:[&>*:nth-child(n)]:before:-inset-1
+// hover:[&>*:nth-child(n)]:before:-skew-y-6
+// hover:[&>*:nth-child(n)]:relative
+// hover:[&>*:nth-child(n)]:before:-z-10
+
+// hover:[&>*:nth-child(n)]:font-bold
+// [&>*:nth-child(n)]:ease-out
+// [&>*:nth-child(n)]:duration-300

@@ -1,10 +1,6 @@
-import { Poppins } from 'next/font/google'
+import { poppins } from './fonts'
 import './globals.css'
 
-const poppins = Poppins({
-  weight: '400',
-  subsets: ['latin']
-})
 
 export const metadata = {
   title: 'Abhishek Pethe',

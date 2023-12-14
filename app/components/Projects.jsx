@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-key */
 "use client"
 // export default Projects
 
@@ -23,24 +24,146 @@ import React, { useRef } from 'react'
 import { BsAsterisk } from "react-icons/bs";
 import data from "../data"
 import Image from 'next/image';
+import { caveat } from '../fonts';
+import { FaGithub } from "react-icons/fa";
+import { IoArrowForwardCircleOutline } from "react-icons/io5";
+import { FaReact } from "react-icons/fa"
+import { SiCss3, SiJavascript, SiTailwindcss, SiStyledcomponents, SiAuth0 , SiRedux } from "react-icons/si"
+import { TbBrandVite, TbBrandFramerMotion, TbBrandFigma } from "react-icons/tb"
+import { IoLogoJavascript } from "react-icons/io";
+
+
+const cards = [
+  {
+    url: "E-shoppee.webp",
+    title: "E-Shoppee",
+    id: 1,
+    github: "https://github.com/AbhishekPethe",
+    demo: "https://abdev-eshoppee.netlify.app/",
+    details : [ <IoLogoJavascript /> ,<FaReact /> , <SiStyledcomponents /> , <SiAuth0 /> , <TbBrandVite />  ]
+  },
+  {
+    url: "rental.webp",
+    title: "Car Rental",
+    id: 2,
+    github: "https://github.com/AbhishekPethe",
+    demo: "https://abdev-rental.netlify.app/",
+    details : [<SiTailwindcss /> , <IoLogoJavascript /> , <FaReact /> , <TbBrandVite /> ]
+  },
+  {
+    url: "ahead.webp",
+    title: "Ahead App",
+    id: 3,
+    github: "https://github.com/AbhishekPethe",
+    demo: "https://abdev-aheadapp.netlify.app/",
+    details : [<SiTailwindcss /> , <IoLogoJavascript /> , <FaReact /> , <TbBrandVite /> , <TbBrandFramerMotion /> ]
+  },
+  {
+    url: "nike.webp",
+    title: "Nike Store",
+    id: 4,
+    github: "https://github.com/AbhishekPethe",
+    demo: "https://abdev-nike.netlify.app/",
+    details : [ <FaReact /> , <SiTailwindcss/> , <SiRedux /> ,<TbBrandVite /> ]
+  },
+  {
+    url: "RealEstate.webp",
+    title: "Real Estate",
+    id: 5,
+    github: "https://github.com/AbhishekPethe",
+    demo: "https://abdev-realestate.netlify.app/",
+    details : [ <IoLogoJavascript /> ,<FaReact /> , <SiStyledcomponents /> , <TbBrandVite /> , <TbBrandFramerMotion /> ]
+  },
+  {
+    url: "Pro-fitness.webp",
+    title: "Pro Fitness",
+    id: 6,
+    github: "https://github.com/AbhishekPethe",
+    demo: "https://abdev-profitness.netlify.app/",
+    details : [<SiCss3 /> , <IoLogoJavascript /> , <FaReact /> , <TbBrandVite /> ]
+  },
+  {
+    url: "Krypto.webp",
+    title: "Krypto",
+    id: 7,
+    github: "https://github.com/AbhishekPethe",
+    demo: "https://abdev-crypto.netlify.app/",
+    details : [<SiTailwindcss /> , <IoLogoJavascript /> , <FaReact /> , <TbBrandVite /> ]
+  },
+  {
+    url: "office.webp",
+    title: "Office Rent",
+    id: 8,
+    github: "https://github.com/AbhishekPethe",
+    demo: "https://abdev-office.netlify.app/",
+    details : [<SiTailwindcss /> , <IoLogoJavascript /> , <FaReact /> , <TbBrandVite /> , <TbBrandFramerMotion /> ]
+  },
+  {
+    url: "Metaverse.webp",
+    title: "Meta-Verse",
+    id: 9,
+    github: "https://github.com/AbhishekPethe",
+    demo: "https://abdev-framer.netlify.app/",
+    details : [<SiTailwindcss /> , <IoLogoJavascript /> , <FaReact /> , <TbBrandVite /> , <TbBrandFramerMotion /> ]
+  },
+  {
+    url: "Space.webp",
+    title: "Space Tour",
+    id: 10,
+    github: "https://github.com/AbhishekPethe",
+    demo: "https://abdev-space.netlify.app/",
+    details : [<SiTailwindcss /> , <IoLogoJavascript /> , <FaReact /> , <TbBrandVite /> ]
+  },
+  {
+    url: "Modern UI.webp",
+    title: "Modern UI",
+    id: 11,
+    github: "https://github.com/AbhishekPethe",
+    demo: "https://chatgpt3-portfolio.netlify.app",
+    details : [<TbBrandFigma /> , <SiCss3 /> , <FaReact /> ]
+  },
+  {
+    url: "BusinessUI.webp",
+    title: "Business UI",
+    id: 12,
+    github: "https://github.com/AbhishekPethe",
+    demo: "https://abdev-business.netlify.app/",
+    details : [<SiTailwindcss /> , <FaReact /> , <TbBrandVite /> , <TbBrandFigma />  ]
+  },
+  {
+    url: "portfolio.webp",
+    title: "Portfolio website #2",
+    id: 13,
+    github: "https://github.com/AbhishekPethe",
+    demo: "https://abdev-myportfolio.netlify.app",
+    details : [<SiCss3 /> , <IoLogoJavascript /> , <FaReact /> ]
+  },
+  {
+    url: "Digital Agency.webp",
+    title: "Digital Agency",
+    id: 14,
+    github: "https://github.com/AbhishekPethe",
+    demo: "https://abdev-agency.netlify.app/",
+    details : [<FaReact /> , <SiStyledcomponents /> , <TbBrandVite />  ]
+  },
+];
 
 
 
-
-const HorizontalScrollCarousel = () => {
+const HorizontalScrollCarousel = ({setCursorVariant , setCursorText}) => {
   const targetRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ["1%", "-95%"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["2%", "-95%"]);
 
   return (
-    <section ref={targetRef} className="relative h-[300vh] bg-neutral-900">
-      <div className="sticky top-0 flex h-screen items-center overflow-hidden">
+    <section ref={targetRef} className=" relative h-[500vh] bg-transparent">
+      <div className="sticky top-0 flex h-[80vh] items-center overflow-hidden">
         <motion.div style={{ x }} className="flex gap-4">
           {cards.map((card) => {
-            return <Card card={card} key={card.id} />;
+            return <Card card={card} key={card.id} setCursorVariant={setCursorVariant} setCursorText={setCursorText} />;
           })}
         </motion.div>
       </div>
@@ -48,69 +171,89 @@ const HorizontalScrollCarousel = () => {
   );
 };
 
-const Card = ({ card }) => {
+const Card = ({ card , setCursorVariant , setCursorText}) => {
+  const {Icon} = card
   return (
     <div
       key={card.id}
-      className="group relative h-[450px] w-[450px] overflow-hidden bg-neutral-200"
+      className="group relative h-[400px] w-[650px] overflow-hidden bg-transparent "
     >
-      <div
-        style={{
-          
-         
-        }}
-        className="absolute inset-0 z-0 transition-transform duration-300 group-hover:scale-110"
-      ></div>
-      <div className="absolute inset-0 z-10 grid place-content-center">
-        <p className="bg-gradient-to-br from-white/20 to-white/0 p-8 text-6xl font-black uppercase text-white backdrop-blur-lg">
-          {card.title}
-        </p>
+      <div className='relative w-full h-full brightness-70  '>
+
+      <Image
+        src={`/${card.url}`}
+        alt='img'
+        quality={100}
+        fill
+        placeholder='empty'
+       
+        className="absolute w-full h-full inset-0 z-0 transition-transform duration-1000  opacity-100 bg-auto bg-center group-hover:-z-10 "
+        />
+
+        <div className="absolute inset-0 bg-gradient-to-tl from-[#9bf8f4] to-[#6f7bf7] translate-y-[100%] group-hover:translate-y-[0%] transition-transform duration-300 " >
+          <div className='relative z-10 duration-300 flex flex-col gap-10 p-5 py-14'>
+            <h3
+              onMouseEnter={() => setCursorVariant("heading")}
+              onMouseLeave={() => setCursorVariant("default")}
+              className="font-bold text-5xl text-black w-[50%] ">
+            {card.title}
+            </h3>
+            
+            <div className='flex flex-row gap-8'>
+
+            {
+              card.details.map((each , i) => {
+                return <span key={i} className='text-black text-3xl'>{each}</span>
+              })
+            }
+            </div>
+
+          </div>
+          <p className="text-black absolute -top-10 -right-5 text-[12rem] font-extrabold z-10 duration-300 opacity-20">
+            #{card.id}
+          </p>
+          <div className='absolute w-full flex flex-row justify-between bottom-0 p-10 text-black text-4xl'>
+            <a href={card.github}>
+            <FaGithub
+              onMouseEnter={() => {
+                setCursorText("Github"),
+                setCursorVariant("text")
+              }}
+              
+              onMouseLeave={() => {
+                setCursorText("")
+                setCursorVariant("default")
+              }}
+              className=''
+              />
+            </a>
+
+            <a href={card.demo}>
+
+            <IoArrowForwardCircleOutline 
+              onMouseEnter={() => {
+                setCursorText("Visit site"),
+                  setCursorVariant("text")
+              }}
+            
+              onMouseLeave={() => {
+                setCursorText("")
+                setCursorVariant("default")
+              }}/>
+              </a>
+          </div>
+        </div>
       </div>
+      
     </div>
   );
 };
 
 
 
-const cards = [
-  {
-    url: "/imgs/abstract/1.jpg",
-    title: "Title 1",
-    id: 1,
-  },
-  {
-    url: "/imgs/abstract/2.jpg",
-    title: "Title 2",
-    id: 2,
-  },
-  {
-    url: "/imgs/abstract/3.jpg",
-    title: "Title 3",
-    id: 3,
-  },
-  {
-    url: "/imgs/abstract/4.jpg",
-    title: "Title 4",
-    id: 4,
-  },
-  {
-    url: "/imgs/abstract/5.jpg",
-    title: "Title 5",
-    id: 5,
-  },
-  {
-    url: "/imgs/abstract/6.jpg",
-    title: "Title 6",
-    id: 6,
-  },
-  {
-    url: "/imgs/abstract/7.jpg",
-    title: "Title 7",
-    id: 7,
-  },
-];
 
-const Projects = ({setCursorVariant}) => {
+
+const Projects = ({setCursorVariant , setCursorText}) => {
   return (
       <div className='mt-10 '>
         <h1 className='font-semibold text-2xl md:text-4xl lg:text-4xl flex items-center mb-10 w-fit'
@@ -135,18 +278,10 @@ const Projects = ({setCursorVariant}) => {
         </motion.div>
       </h1>
       
-      <div className="bg-neutral-800">
-      <div className="flex h-48 items-center justify-center">
-        <span className="font-semibold uppercase text-neutral-500">
-          Scroll down
-        </span>
-      </div>
-      <HorizontalScrollCarousel />
-      <div className="flex h-48 items-center justify-center">
-        <span className="font-semibold uppercase text-neutral-500">
-          Scroll up
-        </span>
-      </div>
+      <div className="bg-transparent hidden lg:block">
+      
+        <HorizontalScrollCarousel setCursorVariant={setCursorVariant} setCursorText={setCursorText} />
+      
     </div>
 
 
@@ -162,6 +297,8 @@ const Projects = ({setCursorVariant}) => {
 export default Projects
 
 
+
+//one after the other effect 
 {/* <div className='flex justify-center items-center'>
 <div className='w-[100vw] h-[50vh] md:w-[90vw] md:h-[50vh] lg:h-[90vh] overflow-scroll'>
   {

@@ -3,8 +3,9 @@ import Image from 'next/image'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Projects from './components/Projects'
-import { useEffect, useState } from 'react'
-import { motion } from 'framer-motion'
+import { useEffect, useRef, useState } from 'react'
+import { motion, useScroll } from 'framer-motion'
+import Contact from './components/Contact'
 
 export default function Home() {
 
@@ -13,15 +14,20 @@ export default function Home() {
       y:0
   })
 
-  const [cursorVariant , setCursorVariant] = useState("default")
+  // const mousePos = useRef({x:0 , y:0})
+
+  const [cursorVariant, setCursorVariant] = useState("default")
+  const [cursorText , setCursorText] = useState("a")
 
   useEffect(() => {
       const mouseMove = e => {
           // console.log(e.clientX , e.clientY);
-          setMousePos({
-              x: e.clientX,
-              y:e.clientY
-          })
+        // mousePos.current = { x: e.clientX, y: e.clientY }
+        setMousePos({
+          x: e.clientX,
+          y : e.clientY
+        })
+      
           
       }
 
@@ -32,10 +38,13 @@ export default function Home() {
       }
   }, [])
 
+  
+
   const variants = {
     default: {
-        x: mousePos.x -14,
-        y: mousePos.y - 14,
+        x: mousePos.x,
+        y: mousePos.y,
+       
        
     },
     heading: {
@@ -44,7 +53,8 @@ export default function Home() {
         x: mousePos.x -50,
         y: mousePos.y - 50,
         // backgroundColor: "black",
-        mixBlendMode : "difference"
+      mixBlendMode: "difference",
+      
     },
     navbar: {
       height: 60,
@@ -59,22 +69,37 @@ export default function Home() {
       x: mousePos.x - 35,
       y: mousePos.y - 35,
       mixBlendMode : "difference"
+    },
+    text: {
+      height: 90,
+      width: 90,
+      x: mousePos.x - 45,
+      y: mousePos.y - 45,
+      backgroundColor : "black"
     }
     
 }
 
   return (
-    <main className='text-white mt-7 mx-5 '>
+    <main className='text-white mt-7 mx-5'
+   
+    >
       <motion.div
                   variants={variants}
-                  animate={cursorVariant}
+        animate={cursorVariant}
+        transition={{ type: "tween", ease: "backOut", duration:0.5}}
+                  className='cursor h-[28px] w-[28px] bg-white fixed top-0 left-0 rounded-full border-2 border-red-500 pointer-events-none z-50 flex justify-center items-center '>
                   
-                  className='cursor h-[28px] w-[28px] bg-white fixed top-0 left-0 rounded-full border-2 border-red-500 pointer-events-none z-50 '>
-                  
+        <span className='font-semibold text-white'>
+          {cursorText}
+        </span>
       </motion.div>
-      <Navbar mousePos={mousePos} cursorVariant={cursorVariant} setCursorVariant={setCursorVariant} />
-      <Hero mousePos={mousePos} cursorVariant={cursorVariant} setCursorVariant={setCursorVariant} />
-      <Projects setCursorVariant={setCursorVariant}/>
+   
+    
+      <Navbar setCursorVariant={setCursorVariant} />
+      <Hero setCursorVariant={setCursorVariant} />
+      <Projects setCursorVariant={setCursorVariant} setCursorText={setCursorText} />
+      <Contact />
     </main>
   )
 }

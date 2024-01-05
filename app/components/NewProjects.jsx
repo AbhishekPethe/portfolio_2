@@ -18,7 +18,7 @@ console.log(textArray);
 
 const NewProjects = ({setCursorVariant , setCursorText }) => {
     return (
-        <div>
+        <div className='mt-5'>
             <h1 className='font-semibold text-2xl md:text-4xl lg:text-4xl flex items-center mb-10 w-fit'
         onMouseEnter={() => setCursorVariant("name")}
         onMouseLeave={() => setCursorVariant("default")}>

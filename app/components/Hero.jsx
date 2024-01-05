@@ -9,14 +9,7 @@ import { motion } from 'framer-motion';
 
 const Hero = ({mousePos , cursorVariant , setCursorVariant}) => {
 
-   
-    
-    
-
-    
-
-
-  return (
+   return (
       <div className='mt-10 md:mt-32 lg:mt-10 flex flex-col gap-10 md:gap-14 lg:gap-10 items-center justify-center text-center'>
 
           <GiFireAce className='text-9xl' />

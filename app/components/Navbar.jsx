@@ -44,11 +44,25 @@ const Navbar = ({mousePos , cursorVariant , setCursorVariant}) => {
               <MdOutlineKeyboardDoubleArrowDown onClick={()=>setMenu(true)} />
         
                   <div className={`fixed bg-white z-50 h-[100vh] left-0  w-full text-black flex flex-col justify-center items-center gap-20 ease-out duration-700 ${menu === true ? 'top-0' : '-top-[130%]'} [&>*:nth-child(n)]:font-bold `}>
-                    <MdOutlineKeyboardDoubleArrowUp className='' onClick={()=>setMenu(false)} />
-                    <a href="#about">About</a>
+          <MdOutlineKeyboardDoubleArrowUp className='' onClick={() => setMenu(false)} />
+          
+
+          {
+            ["About", "Resume", "Projects", "Contact"].map((each , i) => {
+              return (
+                <motion.a
+             
+                  href={`#${each}`} key={i}
+                 
+                >{each}</motion.a>
+              )
+            })
+                    }
+
+                    {/* <a href="#about">About</a>
               <a href="#resume">Resume</a>
               <a href="#projects">Projects</a>
-              <a href="#contact">Contact</a>
+              <a href="#contact">Contact</a> */}
                 </div>
           
           </div>

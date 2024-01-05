@@ -1,7 +1,7 @@
 "use client"
 import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
-import profile from "../../public/profile.webp"
+
 import { GiFireAce } from "react-icons/gi";
 import { GiPlagueDoctorProfile } from "react-icons/gi";
 import { FaHandPeace } from "react-icons/fa6";
@@ -26,7 +26,7 @@ const Hero = ({mousePos , cursorVariant , setCursorVariant}) => {
                   onMouseLeave={()=> setCursorVariant("default")}
                   className='text-2xl md:text-4xl lg:text-3xl flex gap-4 font-semibold justify-center'>Hi, I&apos;m Abhishek <FaHandPeace /></motion.p>
             
-              {/* cursor */}
+              
               
 
               <div className='text-4xl tracking-wide leading-[50px] md:leading-[85px] md:text-7xl font-bold '

@@ -3,7 +3,7 @@
 // export default Projects
 
 // import React from 'react';
-// import su from '../../public/profile.webp';
+
 // import Image from 'next/image';
 
 // const Projects = () => {

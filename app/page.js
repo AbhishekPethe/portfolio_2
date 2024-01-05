@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Projects from './components/Projects'
+import NewProjects from "./components/NewProjects"
 import { useEffect, useRef, useState } from 'react'
 import { motion, useScroll } from 'framer-motion'
 import Contact from './components/Contact'
@@ -42,8 +43,8 @@ export default function Home() {
 
   const variants = {
     default: {
-        x: mousePos.x,
-        y: mousePos.y,
+        x: mousePos.x-15,
+        y: mousePos.y-15,
        
        
     },
@@ -98,8 +99,9 @@ export default function Home() {
     
       <Navbar setCursorVariant={setCursorVariant} />
       <Hero setCursorVariant={setCursorVariant} />
-      <Projects setCursorVariant={setCursorVariant} setCursorText={setCursorText} />
-      <Contact />
+      <NewProjects setCursorVariant={setCursorVariant} setCursorText={setCursorText} />
+      {/* <Projects setCursorVariant={setCursorVariant} setCursorText={setCursorText} /> */}
+      {/* <Contact /> */}
     </main>
   )
 }

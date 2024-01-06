@@ -8,8 +8,6 @@ import { useEffect, useRef, useState } from 'react'
 import { motion, useScroll } from 'framer-motion'
 import Contact from './components/Contact'
 
-
-
 export default function Home() {
 
     const [mousePos, setMousePos] = useState({
@@ -21,7 +19,7 @@ export default function Home() {
 
   const [cursorVariant, setCursorVariant] = useState("default")
   const [cursorText , setCursorText] = useState("a")
-  
+
   useEffect(() => {
       const mouseMove = e => {
           // console.log(e.clientX , e.clientY);
@@ -107,4 +105,3 @@ export default function Home() {
     </main>
   )
 }
-

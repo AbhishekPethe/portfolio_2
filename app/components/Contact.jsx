@@ -72,16 +72,16 @@ const Contact = () => {
           </article>
         </div>
         
-        {/* <form ref={form} onSubmit={sendEmail} className='flex flex-col gap-5  [&>*:nth-child(n)]:p-5 [&>*:nth-child(n)]:border-2 [&>*:nth-child(n)]:border-white [&>*:nth-child(n)]:bg-transparent [&>*:nth-child(n)]:rounded-xl'>
-            <input type="text" name="name" placeholder='Your Full Name' required className='' />
-            <input type="email" name="email" placeholder='Your Email Address' required />
-            <textarea name="message" id="" cols="30" rows="7" placeholder='Your Message' required></textarea>
+        <form ref={form} onSubmit={sendEmail} className='mx-2 flex flex-col gap-5  [&>*:nth-child(n)]:p-5 [&>*:nth-child(n)]:border-2 [&>*:nth-child(n)]:border-white [&>*:nth-child(n)]:bg-transparent [&>*:nth-child(n)]:rounded-xl'>
+            <input type="text" name="name" placeholder='Your Full Name' required className='w-full' />
+            <input type="email" name="email" placeholder='Your Email Address' required className='w-full' />
+            <textarea name="message" id="" cols="30" rows="7" placeholder='Your Message' className='resize-none' required></textarea>
            
             
             <button type="submit" className='btn-primary mt-0 '>Send Message</button>
             {done && <h2 className='text-green-600 flex flex-row gap-3 justify-center items-center border-2 border-white w-fit'>Email Sent <IoIosCheckmarkCircle /></h2> }
            
-        </form> */}
+        </form>
         
 
       </div>

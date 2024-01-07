@@ -39,11 +39,7 @@ const Contact = () => {
       <Heading text="Contact" />
       <div className='flex flex-col justify-center items-center gap-5 lg:gap-24 lg:flex-row '>
         <div className='flex flex-col gap-3 [&>*:nth-child(n)]:border-2 [&>*:nth-child(n)]:border-white [&>*:nth-child(n)]:flex
-        [&>*:nth-child(n)]:flex-col [&>*:nth-child(n)]:items-center [&>*:nth-child(n)]:gap-4 [&>*:nth-child(n)]:p-5 [&>*:nth-child(n)]:rounded-2xl
-       
-        '
-        
-        >
+        [&>*:nth-child(n)]:flex-col [&>*:nth-child(n)]:items-center [&>*:nth-child(n)]:gap-3 [&>*:nth-child(n)]:p-5 [&>*:nth-child(n)]:rounded-2xl'>
           <article 
           onClick={()=>{
             window.open("mailto:abhishekpethe433@gmail.com")
@@ -51,7 +47,7 @@ const Contact = () => {
             <MdOutlineEmail className='text-2xl' />
             <h4 className='max-[500px]:hidden'>Email</h4>
             
-            <a >Send an Email</a>
+            <a>Send an Email</a>
           </article>
 
           <article
@@ -63,7 +59,7 @@ const Contact = () => {
             
             <a >Send a Message</a>
           </article>
-          
+
           <article
           onClick={()=>{
             window.open("https://www.linkedin.com/in/abhishek-pethe")
@@ -76,13 +72,13 @@ const Contact = () => {
           </article>
         </div>
         
-        <form ref={form} onSubmit={sendEmail} className='flex flex-col gap-5  [&>*:nth-child(n)]:p-5 [&>*:nth-child(4n)]:p-5  [&>*:nth-child(n)]:border-2 [&>*:nth-child(n)]:border-white [&>*:nth-child(n)]:bg-transparent [&>*:nth-child(n)]:rounded-xl'>
+        <form ref={form} onSubmit={sendEmail} className='flex flex-col gap-5  [&>*:nth-child(n)]:p-5 [&>*:nth-child(n)]:border-2 [&>*:nth-child(n)]:border-white [&>*:nth-child(n)]:bg-transparent [&>*:nth-child(n)]:rounded-xl'>
             <input type="text" name="name" placeholder='Your Full Name' required className='' />
             <input type="email" name="email" placeholder='Your Email Address' required />
             <textarea name="message" id="" cols="30" rows="7" placeholder='Your Message' required></textarea>
            
             
-            <button type="submit" className='btn-primary '>Send Message</button>
+            <button type="submit" className='btn-primary mt-0 '>Send Message</button>
             {done && <h2 className='text-green-600 flex flex-row gap-3 justify-center items-center border-2 border-white w-fit'>Email Sent <IoIosCheckmarkCircle /></h2> }
            
         </form>

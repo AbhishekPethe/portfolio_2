@@ -10,6 +10,7 @@ import Contact from './components/Contact'
 import { CursorContext, CursorProvider, useCursorContext } from './Context/context'
 import CustomCursor from './components/CustomCursor'
 import TechStack from './components/TechStack'
+import About from './components/About'
 
 
 
@@ -38,7 +39,8 @@ export default function Home() {
       <Navbar  />
       <Hero />
       <TechStack />
-      <NewProjects  />
+      <NewProjects />
+      <About />
       {/* <Projects setCursorVariant={setCursorVariant} setCursorText={setCursorText} /> */}
       <Contact />
       </main>

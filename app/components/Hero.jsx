@@ -68,7 +68,7 @@ const Hero = ({mousePos , cursorVariant , setCursorVariant}) => {
               </div>
 
               <button className="btn-primary">
-      Contact ME
+        Hire ME !
     </button>
           </motion.div>
       </div>

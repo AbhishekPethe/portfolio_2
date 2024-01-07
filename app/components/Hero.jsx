@@ -6,8 +6,12 @@ import { GiFireAce } from "react-icons/gi";
 import { GiPlagueDoctorProfile } from "react-icons/gi";
 import { FaHandPeace } from "react-icons/fa6";
 import { motion } from 'framer-motion';
+import { useCursorContext } from '../Context/context';
+
 
 const Hero = ({mousePos , cursorVariant , setCursorVariant}) => {
+
+    const {onEnter} = useCursorContext()
 
    return (
       <div className='mt-10 md:mt-32 lg:mt-10 flex flex-col gap-10 md:gap-14 lg:gap-10 items-center justify-center text-center'>
@@ -15,16 +19,16 @@ const Hero = ({mousePos , cursorVariant , setCursorVariant}) => {
           <GiFireAce className='text-9xl' />
           <motion.div className='flex flex-col gap-5 items-center'>
               <motion.p
-                  onMouseEnter={() => setCursorVariant("name")}
-                  onMouseLeave={()=> setCursorVariant("default")}
+                  onMouseEnter={()=>onEnter("HoverName")}
+                  onMouseLeave={()=>onEnter("default")}
                   className='text-2xl md:text-4xl lg:text-3xl flex gap-4 font-semibold justify-center'>Hi, I&apos;m Abhishek <FaHandPeace /></motion.p>
             
               
               
 
               <div className='text-4xl tracking-wide leading-[50px] md:leading-[85px] md:text-7xl font-bold '
-                  onMouseEnter={() => setCursorVariant("heading")}
-                  onMouseLeave={() => setCursorVariant("default")}
+                  onMouseEnter={()=>onEnter("HoverHeading")}
+                  onMouseLeave={()=>onEnter("default")}
               >
                   <p className=' inline-block'>
                       Building digital 
@@ -55,15 +59,15 @@ const Hero = ({mousePos , cursorVariant , setCursorVariant}) => {
               </div>
 
               <div className='text-gray-400 text-lg md:text-2xl lg:text-[22px] mt-10 lg:leading-10'
-                  onMouseEnter={() => setCursorVariant("name")}
-                  onMouseLeave={() => setCursorVariant("default")}
+                  onMouseEnter={()=>onEnter("HoverName")}
+                  onMouseLeave={()=>onEnter("default")}
                 >
                   <p>a <span className='font-semibold'>Front End React </span> Developer based in INDIA.</p>
                   <p>I specialize in <span className='font-semibold'>UI/UX Development</span>  , <span className='font-semibold'>Responsive web design</span></p>
                   <p>and <span className='font-semibold'>Visual Development</span></p>
               </div>
 
-              <button className="rounded-2xl w-fit px-10 py-3 mt-6 border-2 border-dashed border-white bg-black  uppercase text-white transition-all duration-300 hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-md hover:shadow-[4px_4px_0px_white] cursor-none ">
+              <button className="btn-primary">
       Contact ME
     </button>
           </motion.div>

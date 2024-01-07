@@ -1,3 +1,4 @@
+import { CursorProvider } from './Context/context'
 import { poppins } from './fonts'
 import './globals.css'
 
@@ -9,8 +10,14 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
+    
     <html lang="en">
-      <body className={`${poppins.className} bg-[#121111]`} >{children}</body>
+      
+      <body className={`${poppins.className} bg-[#121111]`} >
+      <CursorProvider>
+          {children}
+      </CursorProvider></body>
     </html>
+   
   )
 }

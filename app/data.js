@@ -274,8 +274,8 @@ export const cards = [
       details : [CSS, Javascript , React ]
     },
     {
-      url: "Digital Agency.webp",
-      title: "Digital Agency",
+      url: "Digital.webp",
+      title: "Agency(*Desktop)",
       id: 14,
       github: "https://github.com/AbhishekPethe",
       demo: "https://abdev-agency.netlify.app/",

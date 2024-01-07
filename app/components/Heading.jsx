@@ -1,13 +1,18 @@
 import { motion } from 'framer-motion'
 import React from 'react'
 import { BsAsterisk } from 'react-icons/bs'
+import { useCursorContext } from '../Context/context'
 
 
-const Heading = ({ text , setCursorVariant}) => {
+const Heading = ({ text, setCursorVariant }) => {
+  
+  const { cursorVariant , onEnter } = useCursorContext()
+  
+
   return (
-    <h1 className='font-semibold text-2xl md:text-4xl lg:text-4xl flex items-center mb-10 w-fit'
-        onMouseEnter={() => setCursorVariant("name")}
-        onMouseLeave={() => setCursorVariant("default")}>
+    <h1 className='font-semibold text-3xl md:text-4xl flex items-center my-10 w-fit'
+        onMouseEnter={()=>onEnter("HoverName")}
+        onMouseLeave={()=>onEnter("default")}>
           <span className='text-gray-600'>#</span>
           {text}
           

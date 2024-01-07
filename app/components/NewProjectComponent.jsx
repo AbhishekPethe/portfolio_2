@@ -5,9 +5,13 @@ import { BsAsterisk } from 'react-icons/bs';
 import { motion } from 'framer-motion';
 import { FaGithub } from "react-icons/fa";
 import { IoArrowForwardCircleOutline } from "react-icons/io5";
+import { useCursorContext } from '../Context/context';
 
 
 const NewProjectComponent = ({ each , setCursorVariant , setCursorText}) => {
+
+    const {onEnter} = useCursorContext()
+
     return (
         <div
             className='flex flex-col md:flex-row gap-1 md:gap-5'>
@@ -31,14 +35,14 @@ const NewProjectComponent = ({ each , setCursorVariant , setCursorText}) => {
 
                 <div className='flex flex-row md:flex-col justify-between'>
                     <motion.h1 className='text-2xl md:text-4xl lg:text-5xl opacity-30 w-fit'
-                        onMouseEnter={() => setCursorVariant("name")}
-                        onMouseLeave={() => setCursorVariant("default")}>
+                        onMouseEnter={()=>onEnter("HoverName")}
+                        onMouseLeave={()=>onEnter("default")}>
                         #{each.id}
                     </motion.h1>
                     <div className='w-full h-2 bg-gray-600 max-[768px]:hidden' />
                     <motion.h1 className='text-2xl md:text-3xl lg:text-4xl flex flex-row gap-3 w-fit'
-                        onMouseEnter={() => setCursorVariant("name")}
-                        onMouseLeave={() => setCursorVariant("default")}
+                        onMouseEnter={()=>onEnter("HoverName")}
+                        onMouseLeave={()=>onEnter("default")}
                     >
                         <i className='opacity-75'>
                             {each.title.split(" ")[0]}
@@ -68,24 +72,20 @@ const NewProjectComponent = ({ each , setCursorVariant , setCursorText}) => {
                 <div className='flex flex-row justify-between items-center text-2xl md:text-[34px] '>
                     <a href={`${each.demo}`}><IoArrowForwardCircleOutline
                         onMouseEnter={() => {
-                            setCursorText("Visit Site"),
-                                setCursorVariant("text")
+                            onEnter("HoverSite")
                         }}
 
                         onMouseLeave={() => {
-                            setCursorText("")
-                            setCursorVariant("default")
+                            onEnter("default")
                         }}
                     /></a>
                     <a href={`${each.github}`}><FaGithub
                         onMouseEnter={() => {
-                            setCursorText("Github"),
-                                setCursorVariant("text")
+                           onEnter("HoverGithub")
                         }}
 
                         onMouseLeave={() => {
-                            setCursorText("")
-                            setCursorVariant("default")
+                            onEnter("default")
                         }} /></a>
 
                 </div>
@@ -95,11 +95,13 @@ const NewProjectComponent = ({ each , setCursorVariant , setCursorText}) => {
     )
 }
 
-const Tabs = ({icon , text , setCursorVariant}) => {
+const Tabs = ({ icon, text, setCursorVariant }) => {
+    
+    const {onEnter} = useCursorContext()
     return (
         <motion.div className='flex flex-row justify-center items-center gap-1 text-xs md:text-sm bg-white text-black border-2 border-dotted border-black hover:border-solid rounded-xl w-fit p-1'
-        onMouseEnter={() => setCursorVariant("navbar")}
-        onMouseLeave={() => setCursorVariant("default")}
+        onMouseEnter={() => onEnter("HoverNavbar")}
+        onMouseLeave={() => onEnter("default")}
         >
             <span>
             {icon}

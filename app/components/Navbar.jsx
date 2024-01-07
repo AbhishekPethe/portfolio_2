@@ -2,18 +2,20 @@
 import { motion } from 'framer-motion';
 import React, { useState } from 'react'
 import { MdOutlineKeyboardDoubleArrowDown, MdOutlineKeyboardDoubleArrowUp } from "react-icons/md";
+import { useCursorContext } from '../Context/context';
 
 const Navbar = ({mousePos , cursorVariant , setCursorVariant}) => {
 
   const [menu, setMenu] = useState(false)
 
+  const {onEnter} = useCursorContext()
     
   return (
         <div className='flex justify-between items-center'>
       <motion.p className=' text-2xl md:text-3xl mx-5'
-        onMouseEnter={() => setCursorVariant("heading")}
-        onMouseLeave={()=> setCursorVariant("default")}
-      >
+        onMouseEnter={()=>onEnter("HoverHeading")}
+        onMouseLeave={()=>onEnter("default")}>
+      
             O_O
           </motion.p>
 
@@ -31,9 +33,9 @@ const Navbar = ({mousePos , cursorVariant , setCursorVariant}) => {
             ["About", "Resume", "Projects", "Contact"].map((each , i) => {
               return (
                 <motion.a href={`#${each}`} key={i}
-                  onMouseEnter={()=>setCursorVariant("navbar")}
-                  onMouseLeave={()=>setCursorVariant("default")}
-                >{each}</motion.a>
+                onMouseEnter={()=>onEnter("HoverNavbar")}
+                onMouseLeave={()=>onEnter("default")}>
+                {each}</motion.a>
               )
             })
                     }

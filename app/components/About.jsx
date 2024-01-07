@@ -25,7 +25,7 @@ const About = () => {
                   </div>
               </div>
 
-              <div className='w-[350px] leading-8'>
+              <div className='w-[350px] leading-8 px-3'>
                   <p>Hello I'm Abhishek. I'm a front-end developer located in Maharashtra , India. I love to create simple yet beautiful websites with great user experience. I'm interested in the whole frontend stack especially in React. Currently trying new things and building great projects. My inbox is always open. Feel free to drop a message. Can't wait to collaborate and work with you !</p>
               </div>
           </div>  

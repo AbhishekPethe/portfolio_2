@@ -15,3 +15,30 @@
     @apply rounded-2xl w-fit px-10 py-3 mt-6 border-2 border-dashed border-white bg-black  uppercase text-white transition-all          duration-300 hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-md hover:shadow-[4px_4px_0px_white] cursor-none 
   }
 }
+
+form{
+  display: flex;
+  flex-direction: column;
+  gap : 1.2rem;
+  transition: var(--transition);
+}
+
+input , textarea{
+  width: 100%;
+  padding : 1.5rem;
+  border-radius: 0.5rem;
+  background: transparent;
+  border : 2px solid var(--color-primary-variant);
+  resize: none;
+  color: white;
+
+}
+
+.sent{
+  
+  color : rgb(67, 234, 67);
+  width : 35%;
+  padding-left: 15px;
+  border : 1px solid rgb(67, 234, 67);
+  
+}

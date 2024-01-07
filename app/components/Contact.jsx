@@ -37,7 +37,7 @@ const Contact = () => {
   return (
     <div className='flex flex-col mt-5'>
       <Heading text="Contact" />
-      <div className='flex flex-col justify-center items-center gap-5 lg:gap-24 lg:flex-row '>
+      <div className='flex flex-col justify-center items-center gap-5 lg:gap-20 lg:flex-row '>
         <div className='flex flex-col gap-3 [&>*:nth-child(n)]:border-2 [&>*:nth-child(n)]:border-white [&>*:nth-child(n)]:flex
         [&>*:nth-child(n)]:flex-col [&>*:nth-child(n)]:items-center [&>*:nth-child(n)]:gap-3 [&>*:nth-child(n)]:p-5 [&>*:nth-child(n)]:rounded-2xl'>
           <article 
@@ -47,17 +47,17 @@ const Contact = () => {
             <MdOutlineEmail className='text-2xl' />
             <h4 className='max-[500px]:hidden'>Email</h4>
             
-            <a>Send an Email</a>
+            <p className='text-center'>Send an Email</p>
           </article>
 
-          <article
+          <article 
           onClick={()=>{
             window.open("https://m.me/abhishekpethe433")
           }}>
             <FaFacebookF className='text-2xl' />
             <h4 className='max-[500px]:hidden'>Messenger</h4>
             
-            <a >Send a Message</a>
+            <p className='text-center'>Send a Message</p>
           </article>
 
           <article
@@ -67,7 +67,7 @@ const Contact = () => {
             <FaLinkedinIn className='text-2xl' />
             <h4 className='max-[500px]:hidden'>Linkedin</h4>
           
-            <p>Connect via Linkedin</p>
+            <p className='text-center'>Connect via Linkedin</p>
             
           </article>
         </div>

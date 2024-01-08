@@ -31,6 +31,7 @@ import { FaReact } from "react-icons/fa"
 import { SiCss3, SiJavascript, SiTailwindcss, SiStyledcomponents, SiAuth0 , SiRedux } from "react-icons/si"
 import { TbBrandVite, TbBrandFramerMotion, TbBrandFigma } from "react-icons/tb"
 import { IoLogoJavascript } from "react-icons/io";
+import Heading from './Heading';
 
 
 const cards = [
@@ -255,28 +256,8 @@ const Card = ({ card , setCursorVariant , setCursorText}) => {
 
 const Projects = ({setCursorVariant , setCursorText}) => {
   return (
-      <div className='mt-10 '>
-        <h1 className='font-semibold text-2xl md:text-4xl lg:text-4xl flex items-center mb-10 w-fit'
-        onMouseEnter={() => setCursorVariant("name")}
-        onMouseLeave={() => setCursorVariant("default")}>
-          <span className='text-gray-600'>#</span>
-          Projects
-          
-          <motion.div
-            
-            animate={{
-              rotate: [0, 360],
-            }}
-            transition={{
-            ease: 'linear',
-            repeat: Infinity,
-            duration: 5
-            }}
-            className='ml-4'
-        >
-          <BsAsterisk className='text-pink-400 ' />
-        </motion.div>
-      </h1>
+      <div className='mt-10' id="Projects">
+        <Heading text="Projects" />
       
       <div className="bg-transparent hidden lg:block">
       

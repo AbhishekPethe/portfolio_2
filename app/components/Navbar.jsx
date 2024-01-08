@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import { MdOutlineKeyboardDoubleArrowDown, MdOutlineKeyboardDoubleArrowUp } from "react-icons/md";
 import { useCursorContext } from '../Context/context';
 
+import Link from 'next/link';
 const Navbar = ({mousePos , cursorVariant , setCursorVariant}) => {
 
   const [menu, setMenu] = useState(false)
@@ -30,7 +31,12 @@ const Navbar = ({mousePos , cursorVariant , setCursorVariant}) => {
           '>
              
           {
-            ["About", "Resume", "Projects", "Contact"].map((each , i) => {
+          ["About", "Resume", "Projects", "Contact"].map((each, i) => {
+            if (each==="Resume") {
+              return <Link href="./Abhishek_Pethe_Resume.pdf" target='_blank' key={i}
+              onMouseEnter={()=>onEnter("HoverNavbar")}
+              onMouseLeave={()=>onEnter("default")}>Resume</Link>
+            }
               return (
                 <motion.a href={`#${each}`} key={i}
                 onMouseEnter={()=>onEnter("HoverNavbar")}
@@ -50,12 +56,17 @@ const Navbar = ({mousePos , cursorVariant , setCursorVariant}) => {
           
 
           {
-            ["About", "Resume", "Projects", "Contact"].map((each , i) => {
+            ["About", "Resume", "Projects", "Contact"].map((each, i) => {
+              if (each==="Resume") {
+                return <Link href="./Abhishek_Pethe_Resume.pdf" target='_blank' key={i}
+                onClick={() => setMenu(false)} 
+                >Resume</Link>
+              }
               return (
                 <motion.a
              
                   href={`#${each}`} key={i}
-                 
+                  onClick={() => setMenu(false)} 
                 >{each}</motion.a>
               )
             })
@@ -77,15 +88,3 @@ const Navbar = ({mousePos , cursorVariant , setCursorVariant}) => {
 export default Navbar
 
 
-// hover:[&>*:nth-child(n)]:text-black
-// hover:[&>*:nth-child(n)]:before:block
-// hover:[&>*:nth-child(n)]:before:absolute
-// hover:[&>*:nth-child(n)]:before:bg-white
-// hover:[&>*:nth-child(n)]:before:-inset-1
-// hover:[&>*:nth-child(n)]:before:-skew-y-6
-// hover:[&>*:nth-child(n)]:relative
-// hover:[&>*:nth-child(n)]:before:-z-10
-
-// hover:[&>*:nth-child(n)]:font-bold
-// [&>*:nth-child(n)]:ease-out
-// [&>*:nth-child(n)]:duration-300

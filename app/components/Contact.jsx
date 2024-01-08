@@ -35,44 +35,52 @@ const Contact = () => {
 };
 
   return (
-    <div className='flex flex-col mt-5'>
+    <div className='flex flex-col mt-5' id="Contact">
       <Heading text="Contact" />
       <div className='flex flex-col justify-center items-center gap-5 lg:gap-20 lg:flex-row '>
-        <div className='flex flex-col gap-3 [&>*:nth-child(n)]:border-2 [&>*:nth-child(n)]:border-white [&>*:nth-child(n)]:flex
-        [&>*:nth-child(n)]:flex-col [&>*:nth-child(n)]:items-center [&>*:nth-child(n)]:gap-3 [&>*:nth-child(n)]:p-5 [&>*:nth-child(n)]:rounded-2xl'>
-          <article 
+        <div className='flex flex-col gap-3 lg:ml-10
+        [&>*:nth-child(n)]:border-2 
+        [&>*:nth-child(n)]:border-white 
+        [&>*:nth-child(n)]:flex
+        [&>*:nth-child(n)]:flex-col
+        [&>*:nth-child(n)]:items-center
+        [&>*:nth-child(n)]:gap-3
+        [&>*:nth-child(n)]:p-5
+        [&>*:nth-child(n)]:rounded-2xl
+        '>
+          <article className='group'
           onClick={()=>{
             window.open("mailto:abhishekpethe433@gmail.com")
           }}>
             <MdOutlineEmail className='text-2xl' />
             <h4 className='max-[500px]:hidden'>Email</h4>
             
-            <p className='text-center'>Send an Email</p>
+            <p className='text-center group-hover:text-red-500'>Send an Email</p>
           </article>
 
-          <article 
+          <article className='group'
           onClick={()=>{
             window.open("https://m.me/abhishekpethe433")
           }}>
             <FaFacebookF className='text-2xl' />
             <h4 className='max-[500px]:hidden'>Messenger</h4>
             
-            <p className='text-center'>Send a Message</p>
+            <p className='text-center group-hover:text-red-500'>Send a Message</p>
           </article>
 
-          <article
+          <article className='group'
           onClick={()=>{
             window.open("https://www.linkedin.com/in/abhishek-pethe")
           }}>
             <FaLinkedinIn className='text-2xl' />
             <h4 className='max-[500px]:hidden'>Linkedin</h4>
           
-            <p className='text-center'>Connect via Linkedin</p>
+            <p className='text-center group-hover:text-red-500'>Connect via Linkedin</p>
             
           </article>
         </div>
         
-        <form ref={form} onSubmit={sendEmail} className='mx-2 flex flex-col gap-5  [&>*:nth-child(n)]:p-5 [&>*:nth-child(n)]:border-2 [&>*:nth-child(n)]:border-white [&>*:nth-child(n)]:bg-transparent [&>*:nth-child(n)]:rounded-xl w-full'>
+        <form ref={form} onSubmit={sendEmail} className='w-full mx-2 flex flex-col gap-5  [&>*:nth-child(n)]:p-5 [&>*:nth-child(n)]:border-2 [&>*:nth-child(n)]:border-white [&>*:nth-child(n)]:bg-transparent [&>*:nth-child(n)]:rounded-xl'>
             <input type="text" name="name" placeholder='Your Full Name' required className='w-full' />
             <input type="email" name="email" placeholder='Your Email Address' required className='w-full' />
             <textarea name="message" id="" cols="30" rows="7" placeholder='Your Message' className='resize-none' required></textarea>

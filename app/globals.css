@@ -5,10 +5,13 @@
 ::-webkit-scrollbar{
     display: none;
   }
+html{
+  scroll-behavior: smooth;
+}
 
-/* *{
+*{
     cursor : none
-} */
+}
 
 @layer components{
   .btn-primary{

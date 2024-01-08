@@ -67,9 +67,9 @@ const Hero = ({mousePos , cursorVariant , setCursorVariant}) => {
                   <p>and <span className='font-semibold'>Visual Development</span></p>
               </div>
 
-              <button className="btn-primary">
+              <a href="#Contact" className="btn-primary">
         Hire ME !
-    </button>
+    </a>
           </motion.div>
       </div>
   )

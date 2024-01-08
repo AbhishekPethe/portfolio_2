@@ -11,6 +11,7 @@ import { CursorContext, CursorProvider, useCursorContext } from './Context/conte
 import CustomCursor from './components/CustomCursor'
 import TechStack from './components/TechStack'
 import About from './components/About'
+import Footer from './components/Footer'
 
 
 
@@ -43,6 +44,7 @@ export default function Home() {
       <About />
       {/* <Projects setCursorVariant={setCursorVariant} setCursorText={setCursorText} /> */}
       <Contact />
+      <Footer />
       </main>
       
   )

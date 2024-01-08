@@ -15,8 +15,8 @@ const HomeArray = cards.slice(0, 4)
 
 const NewProjects = ({setCursorVariant , setCursorText }) => {
     return (
-        <div className='mt-20'>
-            <Heading setCursorVariant={setCursorVariant} text="Projects" />
+        <div className='mt-20' id="Projects">
+            <Heading setCursorVariant={setCursorVariant} text="Projects"  />
        
             <div className='flex flex-col gap-7 md:gap-10 lg:gap-14 mx-3'>
             {

@@ -82,7 +82,7 @@ const CustomCursor = () => {
                   variants={variants}
         animate={cursorVariant}
         transition={{ type: "tween", ease: "backOut", duration:0.5}}
-                  className='cursor h-[28px] w-[28px] bg-white fixed top-0 left-0 rounded-full border-2 border-red-500 pointer-events-none z-50 flex justify-center items-center '>
+                  className='h-[28px] w-[28px] bg-white fixed top-0 left-0 rounded-full border-2 border-red-500 pointer-events-none z-50 flex justify-center items-center max-[800px]:hidden'>
                   
         <span className='font-semibold text-white'>
           {cursorText}

@@ -13,7 +13,23 @@ const NewProjectComponent = ({ each , setCursorVariant , setCursorText}) => {
     const {onEnter} = useCursorContext()
 
     return (
-        <div
+        <motion.div
+            initial={{
+                opacity : 0,
+                y : 50
+            }}
+            whileInView={{
+                opacity : 1,
+                y: 0,
+                transition: {
+                    type: 'tween',
+                    ease: 'easeIn',
+                    duration : 0.5
+                  },
+            }}
+            viewport={{once : true , amount : 0.25}}
+            
+            
             className='flex flex-col md:flex-row gap-1 md:gap-5'>
             {/* image */}
             <div className=' rounded-3xl hover:rounded-[40px] border-2 border-transparent hover:border-white  ease-linear duration-200 
@@ -91,7 +107,7 @@ const NewProjectComponent = ({ each , setCursorVariant , setCursorText}) => {
                 </div>
 
             </div>
-        </div>
+        </motion.div>
     )
 }
 

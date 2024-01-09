@@ -19,29 +19,3 @@ html{
   }
 }
 
-/* form{
-  display: flex;
-  flex-direction: column;
-  gap : 1.2rem;
-  transition: var(--transition);
-}
-
-input , textarea{
-  width: 100%;
-  padding : 1.5rem;
-  border-radius: 0.5rem;
-  background: transparent;
-  border : 2px solid var(--color-primary-variant);
-  resize: none;
-  color: white;
-
-}
-
-.sent{
-  
-  color : rgb(67, 234, 67);
-  width : 35%;
-  padding-left: 15px;
-  border : 1px solid rgb(67, 234, 67);
-  
-} */

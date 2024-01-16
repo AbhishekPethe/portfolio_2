@@ -1,7 +1,7 @@
 import React from 'react'
 import { useCursorContext } from '../Context/context'
 
-let skills = ["html" , "css" , "js" , "react" , "tailwind" , "redux" , "nextjs" , "nodejs" , "mongo"  ]
+let skills = ["html" , "css" , "js" , "react" , "tailwind" , "redux" , "nextjs"  , "mongo"  ]
 
 
 

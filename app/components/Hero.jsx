@@ -32,7 +32,7 @@ const Hero = ({mousePos , cursorVariant , setCursorVariant}) => {
                   onMouseLeave={()=>onEnter("default")}
               >
                   <p className=' inline-block'>
-                      Building digitall 
+                      Building digital 
 
                       <br /> </p>
 

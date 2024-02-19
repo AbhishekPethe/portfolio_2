@@ -9,6 +9,7 @@ import { motion } from 'framer-motion';
 import { useCursorContext } from '../Context/context';
 
 
+
 const Hero = ({mousePos , cursorVariant , setCursorVariant}) => {
 
     const {onEnter} = useCursorContext()
@@ -57,6 +58,8 @@ const Hero = ({mousePos , cursorVariant , setCursorVariant}) => {
 
 
               </div>
+
+          
 
               <div className='text-gray-400 text-lg md:text-2xl lg:text-[22px] mt-10 lg:leading-10'
                   onMouseEnter={()=>onEnter("HoverName")}

@@ -46,10 +46,10 @@ const CustomCursor = () => {
          
       },
       heading: {
-          height: 100,
-          width : 100,
-          x: mousePos.x -50,
-          y: mousePos.y - 50,
+          height: 120,
+          width : 120,
+          x: mousePos.x -60,
+          y: mousePos.y - 60,
           // backgroundColor: "black",
         mixBlendMode: "difference",
         

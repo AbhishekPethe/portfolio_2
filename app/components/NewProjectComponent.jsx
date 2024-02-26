@@ -34,7 +34,11 @@ const NewProjectComponent = ({ each , setCursorVariant , setCursorText}) => {
             {/* image */}
             <div className=' rounded-3xl hover:rounded-[40px] border-2 border-transparent hover:border-white  ease-linear duration-200 
                             border-dotted hover:border-dashed group hover:py-2'>
-                <div className='group-hover:scale-90 bg-[#FBF9F1]  rounded-3xl ease-in-out duration-200'>
+                <div className='group-hover:scale-90 bg-[#FBF9F1]  rounded-3xl ease-in-out duration-200'
+                    onClick={() => {
+                        window.open(`${each.demo}`)
+                    }}
+                >
 
                     <Image
                         src={`/${each.url}`}

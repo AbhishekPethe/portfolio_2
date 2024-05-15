@@ -31,7 +31,7 @@ const Navbar = ({mousePos , cursorVariant , setCursorVariant}) => {
           '>
              
           {
-          ["About", "Resume", "Projects", "Contact"].map((each, i) => {
+          ["About", "Projects", "Contact"].map((each, i) => {
             if (each==="Resume") {
               return <Link href="./Abhishek_Pethe_Resume.pdf" target='_blank' key={i}
               onMouseEnter={()=>onEnter("HoverNavbar")}
@@ -56,7 +56,7 @@ const Navbar = ({mousePos , cursorVariant , setCursorVariant}) => {
           
 
           {
-            ["About", "Resume", "Projects", "Contact"].map((each, i) => {
+            ["About", "Projects", "Contact"].map((each, i) => {
               if (each==="Resume") {
                 return <Link href="./Abhishek_Pethe_Resume.pdf" target='_blank' key={i}
                 onClick={() => setMenu(false)} 

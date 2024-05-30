@@ -1,29 +1,26 @@
-"use client"
-import Image from 'next/image'
-import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import Projects from './components/Projects'
-import NewProjects from "./components/NewProjects"
-import { useContext, useEffect, useRef, useState } from 'react'
-import { motion, useScroll } from 'framer-motion'
-import Contact from './components/Contact'
-import { CursorContext, CursorProvider, useCursorContext } from './Context/context'
-import CustomCursor from './components/CustomCursor'
-import TechStack from './components/TechStack'
-import About from './components/About'
-import Footer from './components/Footer'
-
-
-
+"use client";
+import Image from "next/image";
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import Projects from "./components/Projects";
+import NewProjects from "./components/NewProjects";
+import { useContext, useEffect, useRef, useState } from "react";
+import { motion, useScroll } from "framer-motion";
+import Contact from "./components/Contact";
+import {
+  CursorContext,
+  CursorProvider,
+  useCursorContext,
+} from "./Context/context";
+import CustomCursor from "./components/CustomCursor";
+import TechStack from "./components/TechStack";
+import About from "./components/About";
+import Footer from "./components/Footer";
+import SoundBar from "./components/SoundBar";
 
 export default function Home() {
-
-
   return (
-    
-    <main className='text-white mt-7 mx-5'
-   
-    >
+    <main className="text-white mt-7 mx-5">
       {/* <motion.div
                   variants={variants}
         animate={cursorVariant}
@@ -34,10 +31,11 @@ export default function Home() {
           {cursorText}
         </span>
       </motion.div> */}
-   
+
       <CustomCursor />
-    
-      <Navbar  />
+
+      <SoundBar />
+      <Navbar />
       <Hero />
       <TechStack />
       <NewProjects />
@@ -45,8 +43,6 @@ export default function Home() {
       {/* <Projects setCursorVariant={setCursorVariant} setCursorText={setCursorText} /> */}
       <Contact />
       <Footer />
-      </main>
-      
-  )
+    </main>
+  );
 }
-

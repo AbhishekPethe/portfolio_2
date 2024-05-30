@@ -2,20 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
-::-webkit-scrollbar{
-    display: none;
-  }
-html{
+::-webkit-scrollbar {
+  display: none;
+}
+html {
   scroll-behavior: smooth;
 }
 
-*{
-    cursor : none
+* {
+  cursor: none;
 }
 
-@layer components{
-  .btn-primary{
-    @apply rounded-2xl w-fit px-10 py-3 mt-6 border-2 border-dashed border-white bg-black  uppercase text-white transition-all          duration-300 hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-md hover:shadow-[4px_4px_0px_white] cursor-none 
+@layer components {
+  .btn-primary {
+    @apply rounded-2xl w-fit px-10 py-3 mt-6 border-2 border-dashed border-white bg-black  uppercase text-white transition-all          duration-300 hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-md hover:shadow-[4px_4px_0px_white] cursor-none;
   }
 }
-

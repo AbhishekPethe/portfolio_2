@@ -34,7 +34,7 @@ export default function Home() {
 
       <CustomCursor />
 
-      <SoundBar />
+      {/* <SoundBar /> */}
       <Navbar />
       <Hero />
       <TechStack />

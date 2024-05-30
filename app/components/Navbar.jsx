@@ -14,7 +14,7 @@ const Navbar = ({ mousePos, cursorVariant, setCursorVariant }) => {
 
   return (
     <div className='flex justify-between items-center'>
-      <motion.p className=' text-2xl md:text-3xl mx-5'
+      <motion.p className=' text-2xl md:text-3xl mx-2 md:mx-5'
         onMouseEnter={() => onEnter({ variant: "HoverHeading" })}
         onMouseLeave={() => onEnter({ variant: "default" })}>
 

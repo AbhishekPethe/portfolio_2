@@ -1,3 +1,4 @@
+import SmoothScrolling from "./components/SmoothScroll";
 import SoundBar from "./components/SoundBar";
 import { CursorProvider } from "./Context/context";
 import { poppins } from "./fonts";
@@ -12,10 +13,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${poppins.className} bg-[#121111]`}>
-        <CursorProvider>
-          <SoundBar />
-          {children}
-        </CursorProvider>
+        <SmoothScrolling>
+          <CursorProvider>
+            <SoundBar />
+            {children}
+          </CursorProvider>
+        </SmoothScrolling>
       </body>
     </html>
   );

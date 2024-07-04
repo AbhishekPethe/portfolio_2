@@ -17,8 +17,20 @@ import TechStack from "./components/TechStack";
 import About from "./components/About";
 import Footer from "./components/Footer";
 import SoundBar from "./components/SoundBar";
+// import Lenis from "lenis";
 
 export default function Home() {
+  // useEffect(() => {
+  //   const lenis = new Lenis();
+
+  //   function raf(time) {
+  //     lenis.raf(time);
+  //     requestAnimationFrame(raf);
+  //   }
+
+  //   requestAnimationFrame(raf);
+  // }, []);
+
   return (
     <main className="text-white mt-7 mx-5">
       {/* <motion.div

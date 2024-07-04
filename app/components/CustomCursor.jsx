@@ -15,7 +15,7 @@ const CustomCursor = () => {
   // const [cursorText , setCursorText] = useState("a")
 
   const { cursorText, cursorVariant } = useCursorContext()
-  console.log(cursorText);
+  // console.log(cursorText);
 
   useEffect(() => {
     const mouseMove = e => {

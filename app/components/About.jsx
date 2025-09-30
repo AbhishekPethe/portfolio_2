@@ -25,10 +25,12 @@ const About = () => {
                     <div className='flex flex-col gap-1'>
                         <h1>Experience</h1>
                         <div className='w-full h-[2px] bg-gray-600 ' />
+                        <h1>~ 2 YOE @ Gumo (Current)</h1>
+                        <h1>~ 1 YOE as Freelancer</h1>
                         <h1 className='flex gap-5'>&lt; 1 YOE @ Wipro LTD.</h1>
                     </div>
                     <div className='flex flex-col gap-1'>
-                        <h1>Tech</h1>
+                        <h1>Tech Used</h1>
                         <div className='w-full h-[2px] bg-gray-600 ' />
                         <h1>Front-End , SAP </h1>
                     </div>

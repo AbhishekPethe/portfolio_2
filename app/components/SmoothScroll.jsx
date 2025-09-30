@@ -1,10 +1,10 @@
 "use client";
 // import { ReactLenis } from "@studio-freight/react-lenis";
-import { ReactLenis, useLenis } from "lenis/react";
+import { ReactLenis } from "lenis/react";
 
 function SmoothScrolling({ children }) {
     return (
-        <ReactLenis root options={{ lerp: 0.1, duration: 0.1, smoothTouch: true }}>
+        <ReactLenis root options={{ lerp: 0.07, smoothTouch: true, wheelMultiplier: 1, touchMultiplier: 1.5 }}>
             {children}
         </ReactLenis>
     );
